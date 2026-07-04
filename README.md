@@ -2,7 +2,7 @@
 
 # Aristotle Syllogism Reasoner
 
-An interactive Codex/Cursor skill for building and testing Aristotelian categorical syllogisms.
+An interactive AI agent skill for building and testing Aristotelian categorical syllogisms.
 
 The skill guides a user through a structured reasoning process: collect a major premise, collect a minor premise, ask whether to test or infer a conclusion, convert the argument into standard categorical form, identify the logical terms, and test deductive validity with Venn-style reasoning.
 
