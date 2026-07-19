@@ -26,6 +26,26 @@ The skill is useful for:
 - Testing whether a proposed conclusion follows deductively
 - Producing counterexamples for invalid arguments
 
+## Example Use Cases
+
+### 1. Evaluating Monolithic vs. Microservices Architecture
+
+* **Use Case Title:** Verifying System Architecture Hypotheses
+* **Scenario:** A team is debating migrating a high-throughput payment flow from a monolith to a microservices architecture. The lead engineer asserts that because microservices isolate faults, migrating this specific flow will automatically guarantee high availability for the checkout process.
+* **Decision-Making Benefit:** The agent forces the engineer to map their architectural assumptions into explicit premises (e.g., *Major: Some fault-isolating systems are highly available; Minor: All microservices isolate faults*). By identifying logical fallacies like the undistributed middle, the skill helps the team realize their architectural conclusion is deductively invalid, preventing a costly migration based on flawed logical dependencies.
+
+### 2. CI/CD Pipeline Deployment Strategy Selection
+
+* **Use Case Title:** Validating Automated Rollback Triggers
+* **Scenario:** DevOps engineers are designing a deployment pipeline and want to guarantee that no deployment causing a critical performance degradation reaches production. They propose a rule: *No deployments with a >10% CPU spike are stable*, and *Some stable deployments pass the staging smoke test*.
+* **Decision-Making Benefit:** The agent uses set-theoretic reasoning to evaluate if the proposed automated rollback triggers logically guarantee deployment safety. By running a Venn-style analysis on the pipeline rules, the skill helps engineers deduce whether an unsafe deployment could theoretically bypass the staging gate, optimizing the pipeline's logic before it is committed to code.
+
+### 3. Compliance and Access Control (RBAC) Policy Design
+
+* **Use Case Title:** Checking Role-Based Access Control Boundaries
+* **Scenario:** A security engineer is defining complex IAM permissions across multi-tenant environments. They need to ensure that *No external contractors have write access to production data*, and *Some external contractors are members of the DevOps team*, while maintaining the rule that *All DevOps team members have production write access*.
+* **Decision-Making Benefit:** The agent immediately flags these access control policies as logically contradictory (an invalid system configuration). By outputting a concrete counterexample scenario where permissions collide, the skill allows the engineer to fix the RBAC rule definitions prior to deploying broken IAM policies to production.
+
 ## Aristotelian Categorical Syllogisms
 
 An Aristotelian categorical syllogism is a deductive argument made from two categorical premises and one categorical conclusion. Each statement relates one class or category to another.
